@@ -51,15 +51,22 @@ header {
 header .bg-navbar .container-fluid .nav-menu .bg-navbar {
   background-color: #242424;
 }
+header .bg-navbar .container-fluid .nav-menu .bg-navbar a:hover {
+  background-color: #A1EF00;
+  color: #242424;
+}
+header .bg-navbar .container-fluid .nav-menu .bg-navbar a:active {
+  background-color: #94C530;
+}
 header .bg-navbar .container-fluid .nav-menu .navbar-nav {
   margin: 0px 20px;
   gap: 15px;
 }
 header .bg-navbar .container-fluid .navbar-logo {
-  width: 70px;
+  width: 80%;
 }
 header .bg-navbar .container-fluid .navbar-logo img {
-  width: 100%;
+  width: 30%;
 }
 
 /* CUERPO PRINCIPAL*/
@@ -111,41 +118,40 @@ main .links-pages {
   flex-direction: column;
   align-items: center;
   border-radius: 2px;
-  gap: 40px;
   margin: 40px 0px;
 }
-main .links-pages div {
+main .links-pages .boxs div {
   display: flex;
   width: 95%;
-  margin: 5px 5px;
+  margin: 5px 7px;
   border-radius: 5px;
   font-size: 0px;
   background-color: #242424;
   color: whitesmoke;
   align-items: center;
 }
-main .links-pages div .link-img img {
+main .links-pages .boxs div .link-img img {
   margin: 5px 5px;
   border-radius: 5px;
   font-size: 0px;
   width: 95%;
 }
-main .links-pages div .link-text {
+main .links-pages .boxs div .link-text {
   display: flex;
   flex-direction: column;
   margin-right: 15px;
 }
-main .links-pages div .link-text h2 {
+main .links-pages .boxs div .link-text h2 {
   font-size: 14px;
 }
-main .links-pages div .link-text a {
+main .links-pages .boxs div .link-text a {
   color: white;
   font-size: 15px;
   width: 60%;
   text-decoration: none;
   padding: 15px;
 }
-main .links-pages div .link-text a:hover {
+main .links-pages .boxs div .link-text a:hover {
   background-color: #A1EF00;
   color: #242424;
   border-radius: 15px;
@@ -430,6 +436,12 @@ main .rutina-dos .tabla-dos table tr {
 /* MQ tablets */
 @media screen and (min-width: 768px) {
   /* inicio */
+  header .bg-navbar .container-fluid .navbar-logo {
+    width: 80%;
+  }
+  header .bg-navbar .container-fluid .navbar-logo img {
+    width: 16%;
+  }
   main .box-one .texto {
     font-size: 15px;
   }
@@ -449,24 +461,36 @@ main .rutina-dos .tabla-dos table tr {
   main .box-one .grid-img .img-cuatro {
     display: block;
   }
-  main .links-pages div {
+  main .links-pages {
+    gap: 0px;
+  }
+  main .links-pages .boxs {
+    display: flex;
+    justify-content: center;
+    margin: 0px 15px;
+  }
+  main .links-pages .boxs div {
+    margin: 10px 10px;
     display: flex;
     flex-direction: column;
-    width: 70%;
+    width: 73%;
   }
-  main .links-pages div .link-img img {
+  main .links-pages .boxs div .link-img img {
     width: 100%;
     margin: 12px;
   }
-  main .links-pages div .link-text h2 {
+  main .links-pages .boxs div .link-text h2 {
     margin: 12px 0px;
     border-radius: 0px;
     font-size: 15px;
   }
-  main .links-pages div .link-text a {
+  main .links-pages .boxs div .link-text a {
     margin: 30px 0px;
     border-radius: 0px;
     font-size: 15px;
+  }
+  main .links-pages .boxs div .link-text a:hover {
+    border-radius: 15px;
   }
   footer {
     height: 25vh;
@@ -586,11 +610,19 @@ main .rutina-dos .tabla-dos table tr {
 /* MQ desktop */
 @media screen and (min-width: 1280px) {
   /* inicio */
+  header .bg-navbar .container-fluid {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+  }
   header .bg-navbar .container-fluid .navbar-logo {
-    width: 5%;
+    width: 16%;
+  }
+  header .bg-navbar .container-fluid .navbar-logo img {
+    width: 100%;
   }
   header .bg-navbar .container-fluid .nav-menu {
-    margin-left: 320px;
+    width: 30%;
   }
   main .box-one {
     display: flex;
@@ -633,10 +665,13 @@ main .rutina-dos .tabla-dos table tr {
     display: flex;
     flex-direction: row;
   }
-  main .links-pages div {
+  main .links-pages .boxs {
+    width: 100%;
+  }
+  main .links-pages .boxs div {
     width: 90%;
   }
-  main .links-pages div .link-img img {
+  main .links-pages .boxs div .link-img img {
     width: 100%;
     object-fit: cover;
   }

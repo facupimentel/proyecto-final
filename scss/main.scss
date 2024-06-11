@@ -32,6 +32,13 @@ header {
             .nav-menu {
                 .bg-navbar{ 
                      background-color: #242424;
+                     a:hover {
+                        background-color: $color-secundario;
+                        color: #242424;
+                     }
+                     a:active{
+                        background-color: $color-alternativo;
+                     }
                 }
                 .navbar-nav {
                     margin: 0px 20px;
@@ -40,9 +47,9 @@ header {
             }
 
             .navbar-logo{
-                width: 70px;
+                width: 80%;
                 img{
-                    width: 100%;
+                    width: 30%;
                 }
             }
         }    
@@ -110,45 +117,47 @@ main {
         @include flex-column;
         align-items: center;
         border-radius: 2px;
-        gap: 40px;
         margin: 40px 0px;
-
-        div{
-            display: flex;
-            width: 95%;
-            @include estilos (5px 5px, 5px, 0px);
-            background-color: #242424;
-            color: whitesmoke;
-            align-items: center;
-
-            .link-img{
-                img {
-                    @include estilos (5px 5px, 5px, 0px);
-                    width: 95%;
+    
+        .boxs{
+            div{
+                display: flex;
+                width: 95%;
+                @include estilos (5px 7px, 5px, 0px);
+                background-color: #242424;
+                color: whitesmoke;
+                align-items: center;
+    
+                .link-img{
+                    img {
+                        @include estilos (5px 5px, 5px, 0px);
+                        width: 95%;
+                    }
                 }
-            }
-            .link-text {
-                @include flex-column;
-                margin-right: 15px;
-                h2 {
-                    font-size: 14px;
-                }
-                
-                a{
-                    color: white;
-                    font-size: 15px;
-                    width: 60%;
-                    text-decoration: none;
-                    padding: 15px;
-                }
-
-                a:hover {
-                    background-color: $color-secundario;
-                    color: $color-principal;
-                    border-radius: 15px;
+                .link-text {
+                    @include flex-column;
+                    margin-right: 15px;
+                    h2 {
+                        font-size: 14px;
+                    }
+                    
+                    a{
+                        color: white;
+                        font-size: 15px;
+                        width: 60%;
+                        text-decoration: none;
+                        padding: 15px;
+                    }
+    
+                    a:hover {
+                        background-color: $color-secundario;
+                        color: $color-principal;
+                        border-radius: 15px;
+                    }
                 }
             }
         }
+
     }
 }
     
@@ -198,6 +207,21 @@ footer {
 @media screen and (min-width:768px){
 
     /* inicio */
+
+    header {
+        .bg-navbar {
+            .container-fluid{
+                .navbar-logo{
+                    width: 80%;
+                    img{
+                        width: 16%;
+                    }
+                }
+            }    
+            
+        }
+    }
+
     main {
         .box-one {
             .texto{
@@ -227,23 +251,34 @@ footer {
         }
 
         .links-pages {
-            div {
-                @include flex-column;
-                width: 70%;
-                .link-img {
-                    img {
-                        width: 100%;
-                        margin: 12px;
+            gap: 0px;
+            .boxs {
+                display: flex;
+                justify-content: center;
+                margin: 0px 15px;
+                
+                div {
+                    margin: 10px 10px;
+                    @include flex-column;
+                    width: 73%;
+                    .link-img {
+                        img {
+                            width: 100%;
+                            margin: 12px;
+                        }
                     }
-                }
-
-                .link-text{
-                    h2 {
-                        @include estilos (12px 0px, 0px, 15px )
-                    }
-
-                    a {
-                        @include estilos (30px 0px, 0px, 15px )
+    
+                    .link-text{
+                        h2 {
+                            @include estilos (12px 0px, 0px, 15px )
+                        }
+    
+                        a {
+                            @include estilos (30px 0px, 0px, 15px )
+                        }
+                        a:hover {
+                            border-radius: 15px;
+                        }
                     }
                 }
             }
@@ -448,11 +483,18 @@ footer {
     header {
         .bg-navbar{
             .container-fluid{
+                display: flex;
+                justify-content: center;
+                width: 50%;
                 .navbar-logo{
-                    width: 5%;
+                    width: 16%;
+                    img {
+                        width: 100%;
+                    }
                 }
+
                 .nav-menu {
-                    margin-left: 320px;
+                    width: 30%;
                 }
             }
         }
@@ -505,12 +547,15 @@ footer {
         .links-pages {
             display: flex;
             flex-direction: row;
-            div{ 
-                width: 90%;
-                .link-img {
-                    img {
-                        width: 100%;
-                        object-fit: cover;
+            .boxs {
+                width: 100%;
+                div{ 
+                    width: 90%;
+                    .link-img {
+                        img {
+                            width: 100%;
+                            object-fit: cover;
+                        }
                     }
                 }
             }
